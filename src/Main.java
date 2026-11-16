@@ -29,6 +29,29 @@ public class Main {
         System.out.println("Les emplyes de departement IT: " + societe.rechercherParDepartement("IT"));
         System.out.println("Les employes de departement Production: "+societe.rechercherParDepartement("PRODUCTION"));
         System.out.println("Les employes de departement RH: "+societe.rechercherParDepartement("RH"));
+        //Departement
+        DepartementHashSet departement = new DepartementHashSet();
+        Departement d1= new Departement(3,"Production",25);
+        Departement d2= new Departement(1,"IT",15);
+        Departement d3= new Departement(2,"RH",8);
+        //Ajout
+        departement.ajouterDepartement(d1);
+        departement.ajouterDepartement(d2);
+        departement.ajouterDepartement(d3);
+        System.out.println("*****AFFICHAGE DES DEPARTEMENTS*****");
+        departement.afficherDepartements();
+        //recherche par nom
+        System.out.println("Recherche IT : " + departement.rechercherDepartement("IT"));
+        // Tri 1
+        System.out.println("*****TRI PAR ID*****");
+        departement.trierDepartementsParId();
+        // Tri 2
+        System.out.println("*****TRI PAR NOM/ NOMBRE D'EMPLOYES*****");
+        departement.trierDepartementsParNomEtNombreEmployes();
+        //supprimer
+        departement.supprimerDepartement(d2);
+        System.out.println("*****APRES SUPPRESSION*****");
+        departement.afficherDepartements();
 
     }
 }

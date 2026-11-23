@@ -52,6 +52,33 @@ public class Main {
         departement.supprimerDepartement(d2);
         System.out.println("*****APRES SUPPRESSION*****");
         departement.afficherDepartements();
+        //affectation au hashset
+        System.out.println("*****HASHSET*****");
+        AffectationHashMap affectation= new AffectationHashMap();
+        affectation.ajouterEmployeDepartement(e1,d1);
+        affectation.ajouterEmployeDepartement(e2,d1);
+        affectation.ajouterEmployeDepartement(e3,d3);
+        affectation.ajouterEmployeDepartement(e4,d2);
+        affectation.ajouterEmployeDepartement(e5,d3);
+        affectation.ajouterEmployeDepartement(e1,d2);
+        affectation.afficherEmployesEtDepartements();
+        //supprimer
+        System.out.println("*****SUPPRIMER*****");
+        affectation.supprimerEmploye(e1);
+        //affichage de la lsite des employes
+        System.out.println("*****LISTE DES EMPLOYES*****");
+        affectation.afficherEmployes();
+        //affichage de la liste des departements
+        System.out.println("*****LISTE DES DEPARTEMENTS*****");
+        affectation.afficherDepartements();
+        //recherche-emplyes
+        System.out.println("l'employes existe ? "+affectation.rechercherEmploye(e2));
+        //recherche-departement
+        System.out.println("Le departement existe? "+ affectation.rechercherDepartements(d1));
+        //TRI
+        System.out.println("*****TRI*****");
+        System.out.println(affectation.trierMap());
+
 
     }
 }
